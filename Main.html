@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title>HRscript apps</title>
+        <style>
+            body{
+                text-align:center;
+            }
+            #review {
+                width:400px;
+                height:200px;
+            }
+        </style>
+        <script src="https://kihtrak.com/cloud_variable/cloudify.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <h2>HRscript apps</h2>
+        <br>
+        <br>
+        <h2>Create your own app</h2>
+        <br><br>
+        <!--Create app-->
+<input id = "name" type = "text" placeholder = "Name of your game">
+<br>
+<input id = "code" type = "text" placeholder = "Code for your game">
+<br><br>
+<button class = "btn btn-info" onclick = "addApp()">Create the game!</button>
+        <!--Create app-->
+        <br>
+        <br>
+        <h2  onclick = "view()">#Online apps</h2>
+        <br>
+        <h4 id = "appView">
+        </h4>
+        <br>
+        <br><section>
+    </section>
+        </section>
+        <script>
+            var cloud_apps;
+            var appName;
+            var appCode;
+            function viewApp(ID) {
+appCode = document.getElementById(ID).className;
+localStorage.setItem("code", appCode);
+localStorage.setItem("name", ID);
+window.location = "Appview.html";
+            }
+            function addApp() {
+                console.log("App created");
+                appName = document.getElementById("name").value;
+                appCode = document.getElementById("code").value;
+                cloud_apps = "<h4 id = '" + appName + "' class = '" + appCode + "' onclick =" + '"viewApp('+ "'" + appName + "'" + ')"' + ">" + appName + "</h4>" + cloud_apps;
+            }
+            function view() {
+                document.getElementById("appView").innerHTML = cloud_apps;
+            }
+            </script>
+    </body>
+</html>

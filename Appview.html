@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>App viewer</title>
+        <style>
+            body {
+                text-align:center;
+            }
+        </style>
+              <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+              <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+              <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <h2 id = "display"></h2>
+<h4 id = "app">
+
+</h4>
+<br>
+<br>
+<button class = "btn btn-info" onclick = "b()">Back</button>
+<script>
+    var AppCode = localStorage.getItem("code");
+    var AppName = localStorage.getItem("name");
+    document.getElementById("display").innerHTML = AppName;
+    document.getElementById("app").innerHTML = AppCode;
+    function b() {
+        window.location = "Main.html";
+    }
+</script>
+    </body>
+</html>
